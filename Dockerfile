@@ -1,11 +1,20 @@
-FROM registry.access.redhat.com/ubi9/nodejs-22:latest AS build-env
-WORKDIR /app
-RUN npm init -f && npm install
-COPY server.js .
+# Use official Node.js LTS image
+FROM node:18
 
-# Use a small distroless image for as runtime image
-FROM gcr.io/distroless/nodejs22
-COPY --from=build-env /app /app
-WORKDIR /app
-EXPOSE 8080
-CMD ["server.js"]
+# Create app directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json if available
+COPY package*.json ./
+
+# Install dependencies (none in this example but good practice)
+RUN npm install
+
+# Copy app source code
+COPY app.js ./
+
+# Expose port 3000
+EXPOSE 3000
+
+# Command to run the app
+CMD ["npm", "start"]

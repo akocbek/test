@@ -15,8 +15,8 @@ const PORT = 3000;
 
 // COS configuration using env vars
 const config = {
-  endpoint: process.env.MY_COS_ENDPOINT,
-  apiKeyId: process.env.COS_API_KEY_ID,
+  endpoint: process.env.COS_ENDPOINT,
+  apiKeyId: process.env.MY_COS_APIKEY,
   ibmAuthEndpoint: 'https://iam.cloud.ibm.com/identity/token',
   serviceInstanceId: process.env.COS_RESOURCE_INSTANCE_ID,
 };

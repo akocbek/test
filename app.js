@@ -51,6 +51,7 @@ const server = http.createServer(async (req, res) => {
     res.statusCode = 200;
     res.end(JSON.stringify({
       success: true,
+      tvalue: "test value",
       value: process.env.MY_COS_APIKEY,
       value2: process.env.MY_COS,
       env: {

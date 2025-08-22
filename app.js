@@ -16,7 +16,7 @@ const PORT = 3000;
 // COS configuration using env vars
 const config = {
   endpoint: process.env.COS_ENDPOINT,
-  apiKeyId: process.env.MY_COS_APIKEY,
+  apiKeyId: process.env.COS_API_KEY_ID,
   ibmAuthEndpoint: 'https://iam.cloud.ibm.com/identity/token',
   serviceInstanceId: process.env.COS_RESOURCE_INSTANCE_ID,
 };
@@ -51,6 +51,8 @@ const server = http.createServer(async (req, res) => {
     res.statusCode = 200;
     res.end(JSON.stringify({
       success: true,
+      value: process.env.MY_COS_APIKEY,
+      value2: process.env.MY_COS,
       env: {
         COS_ENDPOINT: process.env.COS_ENDPOINT,
         COS_API_KEY_ID: process.env.COS_API_KEY_ID ? '***hidden***' : undefined,

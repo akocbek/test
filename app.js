@@ -42,8 +42,8 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   try {
-    // Replace these with your actual bucket and file path or read from req.url if you want dynamic behavior
-    const bucketName = 'bucket-absaq3cu5ztx0x8';
+
+    const bucketName = 'bucket-absaq3cu5ztx0x8w';
     const objectKey = 'test.txt';
 
     const fileContent = await readFromCOS(bucketName, objectKey);

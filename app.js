@@ -9,9 +9,6 @@ const PORT = 3000;
 //   res.end(JSON.stringify(process.env, null, 2));
 // });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
 
 
 
@@ -69,4 +66,8 @@ const server = http.createServer(async (req, res) => {
       error: error.message,
     }));
   }
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });

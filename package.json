@@ -4,5 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
+  },
+  "dependencies": {
+    "ibm-cos-sdk": "^1.1.0" 
   }
 }
